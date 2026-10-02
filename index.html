@@ -1,49 +1,97 @@
----
-layout: default
-title: Solar Theme
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Con Healy's website</title>
+    <meta
+      name="description"
+      content="A personal website for Con Healy: ideas, interests, and vibe coded web apps."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="site-shell">
+      <div class="content-wrap">
+        <img class="camera-illustration" src="assets/kodak-camera.png" alt="" width="1536" height="1024" />
+        <section class="intro" id="top" aria-labelledby="page-title">
+          <h1 id="page-title">Con Healy's<br />website.</h1>
 
-{% for post in paginator.posts %}
+          <div class="intro-copy">
+            <p>
+              I'm Con. I'm a Product Manager. I've worked in recommendation
+              systems and on an AI assistant, and before becoming product
+              manager I was an engineer for a few years.
+            </p>
+            <p>
+              I'm interested in the evolving landscape of AI services and
+              applications. Having spent arguably too long in university, I'm
+              particularly excited by how LLMs are changing research and research
+              intensive professions.
+            </p>
+            <p>
+              If you share my interests check out my (currently sparsely populated)
+              <a href="https://conhealy.substack.com/" target="_blank" rel="noreferrer">substack</a>
+              or send me a message.
+              <a href="https://www.linkedin.com/in/conhealy" target="_blank" rel="noreferrer">LinkedIn</a>
+              is currently the best place to reach me.
+            </p>
+          </div>
+        </section>
 
-	<article class="post">
+        <section class="projects" id="projects" aria-labelledby="projects-title">
+          <div class="section-heading">
+            <h2 id="projects-title">Stuff I've vibe coded</h2>
+          </div>
 
-		{% if post.external-url %}
-			<h1>
-				<a href="{{ post.external-url }}">{{ post.title }}</a>
-				<a class="anchor" href="{{ post.url }}"><i class="icon-anchor"></i></a>
-			</h1>
-		{% else %}
-			<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-		{% endif %}
+          <div class="project-list">
+            <div class="project-card">
+              <span class="project-number">01</span>
+              <span class="project-info">
+                <a class="project-title" href="/explore-met-art">Explore artworks from the Met</a>
+                <span class="project-description">
+                  Look through and react to images of artworks from the Met's
+                  online collection. The app searches for images that match
+                  artists and genres that you like more often. There's a lot of
+                  randomness in how the images are selected and no two sessions
+                  will be the same. So this is better for exploring images than
+                  you would expect for a well trained recommendation algorithm.
+                </span>
+              </span>
+            </div>
+          </div>
+        </section>
 
-		<div class="post-content">{{ post.content }}</div>
-
-	</article>
-
-{% endfor %}
-
-
-
-{% if paginator.total_pages > 1 %}
-	<div class="postnavigation">
-
-		{% if paginator.previous_page %}
-			{% if paginator.page == 2 %}
-				<a class="prev left" href="/">&larr; Newer</a>
-			{% else %}
-				<a class="prev left" href="/page{{paginator.previous_page}}/">&larr; Newer</a>
-			{% endif %}
-		{% else %}
-			<span class="nope left">&larr; Newer</span>
-		{% endif %}
-
-		<span class="pages">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-
-		{% if paginator.next_page %}
-			<a class="next right" href="/page{{paginator.next_page}}/">Older &rarr;</a>
-		{% else %}
-			<span class="nope right">Older &rarr;</span>
-		{% endif %}
-
-	</div>
-{% endif %}
+        <footer class="site-footer">
+          <a
+            href="https://www.linkedin.com/in/conhealy"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <rect x="2" y="2" width="20" height="20" rx="2" />
+              <circle cx="7" cy="7" r="0.8" />
+              <path d="M7 10v8M11 10v8M11 13a3.5 3.5 0 0 1 7 0v5" />
+            </svg>
+          </a>
+          <a
+            href="https://conhealy.substack.com/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Substack"
+            title="Substack"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M3 2h18M3 6h18M3 10h18v12l-9-5.4L3 22Z" />
+            </svg>
+          </a>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>

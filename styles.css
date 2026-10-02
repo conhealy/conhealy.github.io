@@ -1,0 +1,256 @@
+:root {
+  color-scheme: light;
+  --paper: #f6f5f1;
+  --ink: #29342b;
+  --muted: #596052;
+  --accent: #8c4d30;
+  --rule: rgba(45, 53, 44, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "IBM Plex Mono", monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+.site-shell {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.camera-illustration {
+  pointer-events: none;
+  display: block;
+  width: 34%;
+  height: auto;
+  position: absolute;
+  top: clamp(4rem, 9vw, 7rem);
+  right: 0;
+  opacity: 0.8;
+  mix-blend-mode: multiply;
+}
+
+.content-wrap {
+  z-index: 1;
+  background: var(--paper);
+  width: min(100% - 3rem, 1040px);
+  margin: 0 auto;
+  position: relative;
+}
+
+.intro {
+  max-width: 62%;
+  padding: clamp(4rem, 9vw, 7rem) 0 10rem;
+}
+
+h1,
+h2 {
+  font-family: inherit;
+  letter-spacing: 0;
+  margin: 0;
+  font-weight: 700;
+}
+
+h1 {
+  color: var(--ink);
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  line-height: 1.1;
+}
+
+.intro-copy {
+  color: var(--muted);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  max-width: 550px;
+  margin-top: 2.5rem;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.intro-copy p {
+  margin: 0;
+}
+
+.intro-copy a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+.projects {
+  padding-bottom: 9rem;
+}
+
+.section-heading {
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 1.2rem;
+}
+
+.project-list {
+  border-bottom: 1px solid var(--rule);
+}
+
+.project-card {
+  border-bottom: 1px solid rgba(45, 53, 44, 0.16);
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  text-decoration: none;
+  transition: color 0.2s ease, padding 0.2s ease;
+}
+
+.project-card:last-child {
+  border-bottom: 0;
+}
+
+a.project-card:hover,
+a.project-card:focus-visible {
+  color: var(--accent);
+  padding-left: 0.5rem;
+}
+
+.project-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.project-number {
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+.project-info {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.project-title {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.35rem;
+  text-decoration: none;
+}
+
+a.project-title:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+a.project-title:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.project-description {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.arrow {
+  margin-left: auto;
+  font-size: 1.5rem;
+}
+
+.site-footer {
+  color: var(--muted);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 2rem 0 2.5rem;
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  text-decoration: none;
+}
+
+.site-footer svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.site-footer a:hover {
+  opacity: 0.65;
+}
+
+.site-footer a:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+@media (max-width: 850px) {
+  .camera-illustration {
+    position: static;
+    width: min(55%, 260px);
+    margin: 2rem 0 0 auto;
+  }
+
+  .intro {
+    max-width: 650px;
+    padding: 2rem 0 5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .content-wrap {
+    width: min(100% - 2.25rem, 1040px);
+  }
+
+  .intro-copy {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    max-width: 360px;
+    margin-top: 2rem;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .project-card {
+    gap: 0.8rem;
+  }
+
+  .project-description {
+    font-size: 0.87rem;
+  }
+
+}

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="/explore-met-art/" />
+    <meta name="theme-color" content="#e9e4d9" />
+    <meta
+      name="description"
+      content="A quiet, preference-led art discovery room powered by The Metropolitan Museum of Art."
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23e9e4d9'/%3E%3Cpath d='M18 46V18h28v28z' fill='none' stroke='%2366705b' stroke-width='3'/%3E%3Cpath d='M23 41l8-11 6 7 4-6' fill='none' stroke='%23a36d59' stroke-width='3'/%3E%3C/svg%3E"
+    />
+    <title>Stillroom — Art discovery</title>
+    <link rel="stylesheet" href="styles.css?v=4" />
+    <script src="app.js?v=15" defer></script>
+  </head>
+  <body>
+    <main class="gallery-shell">
+      <div class="paper-grain" aria-hidden="true"></div>
+
+      <section class="gallery-intro" aria-labelledby="page-title">
+        <p class="eyebrow">Your personal viewing room</p>
+        <h1 id="page-title">an invitation <em>to explore</em></h1>
+        <p class="intro-copy">Respond to the work. The room will quietly learn what holds your attention. Images from The Metropolitan Museum of Art.</p>
+      </section>
+
+      <section id="artwork" class="artwork-layout" aria-label="Artwork viewing room">
+        <div class="painting-column">
+          <div class="frame-shadow">
+            <div class="frame">
+              <div class="mat">
+                <div class="painting-wrap">
+                  <img id="painting" class="painting" src="assets/garden-at-dusk.png" alt="" />
+                  <div class="loading-veil" id="loading-veil" aria-hidden="true"><span></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="artwork-reaction" aria-label="Rate this artwork">
+            <span class="reaction-prompt" id="reaction-status" aria-live="polite">Does this work speak to you?</span>
+            <div class="reaction-buttons">
+              <button class="reaction-button" id="like-button" type="button" aria-label="Like this artwork" aria-pressed="false" title="Like">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 10.5v10h-3a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1h3Zm0 0 4.1-7.1a1.6 1.6 0 0 1 3 1l-.8 4.1h5.2a2 2 0 0 1 2 2.3l-1.1 7.1a3 3 0 0 1-3 2.6H7.5"></path></svg>
+              </button>
+              <button class="reaction-button" id="dislike-button" type="button" aria-label="Dislike this artwork" aria-pressed="false" title="Dislike">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 13.5v-10h-3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h3Zm0 0 4.1 7.1a1.6 1.6 0 0 0 3-1l-.8-4.1h5.2a2 2 0 0 0 2-2.3l-1.1-7.1a3 3 0 0 0-3-2.6H7.5"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <article class="details-panel">
+          <div class="details-topline">
+            <span id="selection-mode">Connecting to the collection</span>
+          </div>
+
+          <div class="title-block">
+            <p class="work-number" id="artwork-context">From the collection</p>
+            <h2 id="artwork-title">The Garden at Dusk</h2>
+            <p class="artist-line"><span id="artwork-artist">Mara Ellison</span> <b>·</b> <span id="artwork-year">2024</span></p>
+          </div>
+
+          <div class="soft-rule"></div>
+          <p class="description" id="artwork-description"></p>
+
+          <dl class="specs">
+            <div><dt>Medium</dt><dd id="artwork-medium"></dd></div>
+            <div><dt>Dimensions</dt><dd id="artwork-dimensions"></dd></div>
+          </dl>
+
+          <a class="artwork-link" id="artwork-link" href="#" target="_blank" rel="noreferrer" hidden>More info on this work</a>
+
+          <details class="filter-details">
+            <summary>
+              <span>Preferred media</span>
+              <span id="media-filter-summary">Paintings</span>
+            </summary>
+            <form id="media-filter-form">
+              <fieldset>
+                <legend>Include media</legend>
+                <div class="media-options" id="media-options"></div>
+              </fieldset>
+              <div class="filter-actions">
+                <div>
+                  <button type="button" class="filter-preset" id="media-fine-art">Fine art</button>
+                  <button type="button" class="filter-preset" id="media-all">All media</button>
+                </div>
+                <button type="submit" class="filter-apply">Apply</button>
+              </div>
+            </form>
+          </details>
+
+          <button type="button" class="next-button" id="next-button">
+            <span id="next-button-label">Show another work</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"></path></svg>
+          </button>
+
+          <section class="taste-section" aria-labelledby="taste-title">
+            <div class="taste-heading">
+              <p class="word-cloud-title" id="taste-title">Your emerging taste for today</p>
+              <button type="button" class="reset-button" id="reset-button">Reset</button>
+            </div>
+            <div class="word-cloud" id="word-cloud" aria-live="polite"></div>
+            <p class="empty-taste" id="empty-taste">Like a work to begin shaping this room.</p>
+          </section>
+
+          <details class="query-details" id="query-details">
+            <summary>Selection notes</summary>
+            <p class="query-label">How this work was selected</p>
+            <p class="query-text" id="query-text">Connecting to The Metropolitan Museum of Art.</p>
+          </details>
+        </article>
+      </section>
+
+      <footer class="site-footer">
+        <a href="/">Back to Con Healy's website</a>
+      </footer>
+    </main>
+  </body>
+</html>
