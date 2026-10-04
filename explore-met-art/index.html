@@ -15,8 +15,8 @@
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23e9e4d9'/%3E%3Cpath d='M18 46V18h28v28z' fill='none' stroke='%2366705b' stroke-width='3'/%3E%3Cpath d='M23 41l8-11 6 7 4-6' fill='none' stroke='%23a36d59' stroke-width='3'/%3E%3C/svg%3E"
     />
     <title>Stillroom — Art discovery</title>
-    <link rel="stylesheet" href="styles.css?v=4" />
-    <script src="app.js?v=15" defer></script>
+    <link rel="stylesheet" href="styles.css?v=5" />
+    <script src="app.js?v=16" defer></script>
   </head>
   <body>
     <main class="gallery-shell">
@@ -52,6 +52,7 @@
               </button>
             </div>
           </div>
+          <div class="mobile-next-slot" id="mobile-next-slot"></div>
         </div>
 
         <article class="details-panel">
@@ -95,10 +96,12 @@
             </form>
           </details>
 
-          <button type="button" class="next-button" id="next-button">
-            <span id="next-button-label">Show another work</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"></path></svg>
-          </button>
+          <div id="desktop-next-slot">
+            <button type="button" class="next-button" id="next-button">
+              <span id="next-button-label">Show another work</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"></path></svg>
+            </button>
+          </div>
 
           <section class="taste-section" aria-labelledby="taste-title">
             <div class="taste-heading">

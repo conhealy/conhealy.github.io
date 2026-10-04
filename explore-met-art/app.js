@@ -76,6 +76,14 @@ const ui = Object.fromEntries([
   "media-options", "media-fine-art", "media-all", "next-button-label", "artwork-link"
 ].map((id) => [id, document.getElementById(id)]));
 
+const narrowLayout = window.matchMedia("(max-width: 860px)");
+function positionNextButton() {
+  const slot = document.getElementById(narrowLayout.matches ? "mobile-next-slot" : "desktop-next-slot");
+  slot.append(ui["next-button"]);
+}
+positionNextButton();
+narrowLayout.addEventListener("change", positionNextButton);
+
 function loadPreferences() {
   try {
     const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
