@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <base href="/matrix-retrofuturistic-doomscroll/">
+  <meta name="theme-color" content="#020503">
+  <meta name="description" content="News and conversation decoded from a living stream of green code.">
+  <title>Matrix Feed</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23020503'/%3E%3Cpath d='M8 7v18M16 4v17M24 10v18' stroke='%236bff98' stroke-width='3' stroke-dasharray='3 2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="terminal" aria-label="Matrix feed terminal">
+    <div class="scene">
+      <img class="scene-image" src="terminal.png" alt="A vintage CRT monitor and keyboard in a dark room with hanging cables" draggable="false">
+      <header class="intro">
+        <p>The 1999 film <em>The Matrix</em> <a href="https://www.youtube.com/watch?v=MvEXkd3O2ow&amp;t=3s" target="_blank" rel="noopener noreferrer">predicted the emergence of doomscrolling</a>. Now you too can doomscroll in retrofuturistic style.</p>
+      </header>
+      <nav class="feed-tabs" aria-label="Feed source">
+        <button class="feed-tab active" data-feed="news" aria-pressed="true">news feed</button>
+        <button class="feed-tab" data-feed="wikipedia" aria-pressed="false">wikipedia changes</button>
+      </nav>
+      <div class="source-status" aria-live="polite"><a id="source-link" href="https://www.bbc.com/news/world" target="_blank" rel="noopener noreferrer">BBC News</a><span id="feed-status">Connecting...</span></div>
+      <section class="screen" aria-label="BBC World News stream">
+        <canvas id="rain" aria-hidden="true"></canvas>
+        <div class="feed sr-only" id="feed" role="log" aria-label="Sample headlines" aria-live="off"></div>
+        <div class="scanlines" aria-hidden="true"></div>
+      </section>
+      <button class="power" id="pause" aria-label="Pause stream" aria-pressed="false" title="Pause stream"><span aria-hidden="true">&#9211;</span></button>
+      <div class="power-led" aria-hidden="true"></div>
+    </div>
+  </main>
+</body>
+</html>
